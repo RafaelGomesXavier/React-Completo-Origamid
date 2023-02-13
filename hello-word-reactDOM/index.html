@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <title>Hello World React</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Hello World React</title>
+  </head>
+  <body>
+    <!-- Adicionando react no html-->
     <div id="app"></div>
-
     <h1 id="backstage"></h1>
+
+    <div id="newApp"></div>
+
+
     <script type="text/babel">
       function App() {
-        return <div>Hello World</div>
+        return <div>Hello World</div>;
       }
-      ReactDOM.render(<App />, document.getElementById("app"));
+      ReactDOM.render(<App />, document.getElementById('app'));
 
-      //
+      // Como o babel transcreve o codigo por baixo dos panos
 
       function BackstageApp() {
-        return React.createElement('h1', {id: 'backstage'}, 'Isso é o que acontece por baixo dos panos.')
+        return React.createElement(
+          'h1',
+          { id: 'backstage' },
+          'Isso é o que acontece por baixo dos panos.',
+        );
       }
 
       ReactDOM.render(<BackstageApp />, document.getElementById('backstage'));
+
+      // Reutilizando componentes
+
+      function Button() {
+        function updateState() {
+          const [Contador, setContador] = useState();
+        }
+        return (
+          <div>
+            <button onClick={updateState}>Comprar</button>
+            </div>
+        )
+      }
+      ReactDOM.render(<Button />,document.getElementById('newApp'))
+
+
+
+
     </script>
-</body>
+  </body>
 </html>

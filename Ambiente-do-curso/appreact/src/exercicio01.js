@@ -49,17 +49,23 @@ const ExercicioLuana = () => {
     ],
     situacao: 'inativa',
   };
-  
+
   const dados = mario;
-  const {cliente, idade, compras, situacao} = dados;
-const total = compras
-.map((item) => Number(item.preco.replace('R$ ', '')))
-.reduce((a, b) => a + b);
+  const { cliente, idade, compras, situacao } = dados;
+  const total = compras
+    .map((item) => Number(item.preco.replace('R$ ', '')))
+    .reduce((a, b) => a + b);
   return (
     <>
       <p>Nome: {cliente}</p>
       <p>Idade: {idade}</p>
-      <p>Situacao: <span style={situacao === 'ativa' ? {color: 'green'} : {color: 'red'}}>{situacao}</span></p>
+      <p>
+        Situacao:{' '}
+        <span
+          style={situacao === 'ativa' ? { color: 'green' } : { color: 'red' }}>
+          {situacao}
+        </span>
+      </p>
       <p>Total: R$ {total}</p>
       <p>{total >= 10000 ? 'Você esta gastando demais' : ''}</p>
     </>

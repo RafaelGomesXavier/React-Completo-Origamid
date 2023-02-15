@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+const titulo = <h1>Este é um titulo</h1>
+
+const App = () => {
+  const soma = (a, b) => {
+    return a + b
+  }
+  const nome = Math.random();
+  const ativo = false;
+  const carro = {
+    rodas: '4',
+    portas: '4',
+    bancos: '5',
+  }
+  const estilo = {
+    color: 'tomato',
+    backgroundColor: 'orange',
+    fontFamily: 'Poppins'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    {titulo}
+    <p style={estilo} className={ativo ? 'ativo' : 'inativo'}>{nome * 100}</p>
+    <p>{new Date().getTime() / 1000}</p>
+    <span>{soma(2, 5)}</span>
+    <h2 style={estilo}>{`O novo Honda tem: ${carro.rodas} rodas, ${carro.portas} portas e ${carro.bancos} bancos`}</h2>
+    </>
+  )
+};
 
 export default App;

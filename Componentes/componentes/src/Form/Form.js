@@ -5,14 +5,8 @@ import Button from './Button';
 const Form = () => {
   return (
     <form>
-      <p>
-        <label htmlFor="name">Nome: </label>
-        <Input />
-      </p>
-      <p>
-        <label htmlFor="Email">Email</label>
-        <Input />
-      </p>
+      <Input label="Nome" name="nome" id="nome" required />
+      <Input label="Password" name="password" id="password" />
       <Button />
     </form>
   );

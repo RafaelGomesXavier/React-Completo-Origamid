@@ -1,7 +1,8 @@
 import React from 'react';
+import Produtos from './Produtos';
 
 const App = () => {
-  const [dados, setDados] = React.useState();
+  const [dados, setDados] = React.useState(null);
 
   async function handleClick(event) {
     const promise = await fetch(
@@ -12,7 +13,7 @@ const App = () => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <button style={{ margin: '.5rem' }} onClick={handleClick}>
         notebook
       </button>
@@ -22,11 +23,9 @@ const App = () => {
       <button style={{ margin: '.5rem' }} onClick={handleClick}>
         tablet
       </button>
-
-      <div>
-        <h1>{dados}</h1>
-      </div>
-    </React.Fragment>
+      {/* Verificando se dados existe pois estava dando erro, outra forma de utilizar é usando dados?.algumaCoisa */}
+      {dados && <Produtos dados={dados} />}
+    </>
   );
 };
 

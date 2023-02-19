@@ -3,13 +3,16 @@ import Produtos from './Produtos';
 
 const App = () => {
   const [dados, setDados] = React.useState(null);
+  const [loading, setLoading] = React.useState(null);
 
   async function handleClick(event) {
-    const promise = await fetch(
+    setLoading(true);
+    const accessApisProduto = await fetch(
       `https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`,
     );
-    const jsonResponse = await promise.json();
+    const jsonResponse = await accessApisProduto.json();
     setDados(jsonResponse);
+    setLoading(false);
   }
 
   return (
@@ -23,8 +26,9 @@ const App = () => {
       <button style={{ margin: '.5rem' }} onClick={handleClick}>
         tablet
       </button>
+      {loading && <p>Carregando..................</p>}
       {/* Verificando se dados existe pois estava dando erro, outra forma de utilizar é usando dados?.algumaCoisa */}
-      {dados && <Produtos dados={dados} />}
+      {!loading && dados && <Produtos dados={dados} />}
     </>
   );
 };

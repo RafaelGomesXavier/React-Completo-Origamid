@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+# https://ranekapi.origamid.dev/json/api/produto/tablet
+# https://ranekapi.origamid.dev/json/api/produto/smartphone
+# https://ranekapi.origamid.dev/json/api/produto/Notebook
+
+

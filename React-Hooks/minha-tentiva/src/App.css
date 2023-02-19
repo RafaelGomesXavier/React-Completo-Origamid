@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'JetBrainsMono Nerd Front';
+
+}
+
+button:hover{
+  cursor: pointer;
+  opacity: .9;
+}
+.produtos{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px dotted cadetblue;
+  text-align: center;
+}
+
+.produtos h1{
+  font-family: 'IBM PLEX MONO';
+  font-size: 2rem;
+  border: .5px dotted crimson;
+  background-color: crimson;
+  color: #ddd;
+  border-radius: 2px;
+}
+.produtos p{
+  font-size: 1.5rem;
+}
+.produtos span {
+  color: cadetblue;
+  font-weight: 700;
+}
